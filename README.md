@@ -49,6 +49,7 @@ This project involves team collaboration to deploy a web application onto a clou
 > [!NOTE]
 >	You should work always in /tmp.
 > You should have kubectl in your path
+> You should have Python in your path with the versions between ( 3.10 and 3.12)
 
 
 > [!NOTE]
@@ -58,15 +59,15 @@ This project involves team collaboration to deploy a web application onto a clou
 > You should try to understand each folder in Project-8---Observability-Systems/ (https://github.com/maxiplux/Project-8---Observability-Systems).
 ## Instalation.
 - Setup your local docker-desktop with Kubernetes.
-- git clone https://github.com/maxiplux/Project-8---Observability-Systems.git
-# Istio Installation Guide
 
+
+# Istio Installation Guide
 ## Prerequisites
 
 - A Kubernetes cluster with versions: 1.26, 1.27, 1.28, or 1.29.
 - `kubectl` installed and configured to access your cluster.
 
-## Download Istio
+### Download Istio
 
 Download the latest release of Istio with the following command:
 - curl -L https://istio.io/downloadIstio | sh -
@@ -74,7 +75,17 @@ Download the latest release of Istio with the following command:
 - export PATH=$PWD/bin:$PATH
 - istioctl install --set profile=demo -y
 - kubectl label namespace weclouddata istio-injection=enabled
-- 
+
+### Install project
+- cd /tmp
+- git clone https://github.com/maxiplux/Project-8---Observability-Systems.git
+- cd Project-8---Observability-Systems.git
+- chmod +x *.sh
+- kubectl apply -f namespace.yml
+- kubectl label namespace weclouddata istio-injection=enabled
+- sh deployer.sh
+- pip install requests
+   
 
 
 
