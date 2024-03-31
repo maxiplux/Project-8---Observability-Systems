@@ -95,8 +95,13 @@ Download the latest release of Istio with the following command:
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/84fddace-9d1d-4bf3-b2f5-b32b5f1c4b9d)
 - kubectl get svc -n weclouddata | grep math-division-multiplication
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/8b45e50e-e011-497e-8033-8bdb8236aae7)
+###
+- As you can see, we have two micro services running in our cluster under namespace weclouddata. We need to generate trafic to them.
+- To achive that, we need to target by http the ports 31181 and 31979. Those ports are going to be the arguments to test our  micro services.
+- These ports are relative to your machine, therefore  math-add-subtract=31979 and math-division-multiplication 31181. Thanks to it you can call the strees tool below. 
+- python tester.py  math-add-subtract 31979 math-division-multiplication 31181
 
-- pip install requests   
+
 
 
 
