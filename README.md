@@ -36,24 +36,25 @@ This project involves team collaboration to deploy a web application onto a clou
 #### Summary
  - Each service is encapsulated within its own container and is part of a microservice architecture that facilitates scalability and ease of maintenance. The observability of the system is managed through Prometheus, Grafana, and Loki, allowing for efficient monitoring and analysis.
 
-## Instalation.
 
+> [!IMPORTANT]
+> Please, pay attetion to each note or caution about this project.
 
 > [!CAUTION]
 > You should use this scripts in production environment, you must read each script and try to have a deep understanding about these scripts. The permissions and AWS policies, GitHub Credentials, and Docker Hub are temporals.  
 
 
-> [!NOTE]
+> [!CAUTION]
 > You should have Terraform in your PATH environment.
 
-> [!NOTE]
+> [!CAUTION]
 >	You should work always in /tmp.
 
-> [!NOTE]
+> [!CAUTION]
 >	All the commands must be run as ubuntu user or any local user ( default user) .
 
-> [!NOTE]
+> [!CAUTION]
 > You should try to understand each folder in Project-8---Observability-Systems/ (https://github.com/maxiplux/Project-8---Observability-Systems).
 
-
+## Instalation.
 
