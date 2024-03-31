@@ -21,7 +21,7 @@ def calll_api(api_gateway=False,route="division-multiplication",server="localhos
     except Exception as e:
         print(f"Error: {e}")
         return
-    
+
     value=response.text
 
     print (f"Server: {server}, Port: {port}, Service: {services}, a: {a}, b: {b}, Response: {value}")
@@ -58,8 +58,12 @@ def main(api_gateway=False,math_add_subtract=31181,math_division_multiplication=
 
         for call in calls:
             p = Process(target=calll_api, args=call)
-            p.start()
-            processes.append(p)
+            try:
+                p.start()
+                processes.append(p)
+            except Exception as e:
+                print(f"Error: {e}")
+                pass
 
         # Wait for all processes to finish
     for p in processes:
