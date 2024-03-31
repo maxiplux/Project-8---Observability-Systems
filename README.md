@@ -85,6 +85,7 @@ Download the latest release of Istio with the following command:
 - chmod +x *.sh
 ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/c9873bbe-81b8-4b5f-9f63-b939397b0c4c)
 
+- sh monitoring.sh
 - kubectl apply -f namespace.yml 
 - kubectl label namespace weclouddata istio-injection=enabled
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/8d43d8f8-2066-4b59-8046-a04eecff236e)
@@ -99,7 +100,18 @@ Download the latest release of Istio with the following command:
 - As you can see, we have two micro services running in our cluster under namespace weclouddata. We need to generate trafic to them.
 - To achive that, we need to target by http the ports 31181 and 31979. Those ports are going to be the arguments to test our  micro services.
 - These ports are relative to your machine, therefore  math-add-subtract=31979 and math-division-multiplication 31181. Thanks to it you can call the strees tool below. 
-- python tester.py  math-add-subtract 31979 math-division-multiplication 31181
+- ulimit -S -n 15000
+- sh monitoring.sh
+- python3 tester.py  math-add-subtract=31979 math-division-multiplication=31181
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/27840eb8-e89d-4550-8352-d9b142d4abd2)
+- Now we can see the results about it
+### Results
+- istioctl dashboard kiali
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/14f701d8-2f20-4d5b-baf0-16d0f96773e3)
+- 
+- 
+
+
 
 
 
