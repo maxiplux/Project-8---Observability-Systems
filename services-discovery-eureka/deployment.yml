@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-server
+  namespace: weclouddata
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eureka-server
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8082"
+      labels:
+        app: eureka-server
+    spec:
+      containers:
+      - name: eureka-server
+        env:
+          - name: SERVER_LOKI
+            value: "loki:3100"
+          - name: PORT
+            value: "8045"
+
+        image: maxiplux/eureka-server:1.0.0
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
+        ports:
+        - containerPort: 8045

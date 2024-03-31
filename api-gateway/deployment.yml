@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  namespace: weclouddata
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8082"
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+      - name: api-gateway
+        env:
+          - name: SERVER_LOKI
+            value: "loki:3100"
+          - name: PORT
+            value: "8075"
+
+          - name: EUREKA_SERVER
+            value: "eureka-server"
+          - name: SERVER_ADD_SUBTRACT
+            value: "math-add-subtract"
+          - name: SERVER_ADD_SUBTRACT_PORT
+            value: "8082"
+          - name: SERVER_DIVISION_MULTIPLICATION
+            value: "math-division-multiplication"
+          - name: SERVER_DIVISION_MULTIPLICATION_PORT
+            value: "8081"
+
+
+        image: maxiplux/api-gate-way:2.0.0
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
+        ports:
+        - containerPort: 8075
