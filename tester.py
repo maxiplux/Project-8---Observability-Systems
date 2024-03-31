@@ -16,7 +16,12 @@ def calll_api(api_gateway=False,route="division-multiplication",server="localhos
 
     payload={}
     headers = {}
-    response = requests.request("POST", url, headers=headers, data=payload)
+    try:
+        response = requests.request("POST", url, headers=headers, data=payload)
+    except Exception as e:
+        print(f"Error: {e}")
+        return
+    
     value=response.text
 
     print (f"Server: {server}, Port: {port}, Service: {services}, a: {a}, b: {b}, Response: {value}")
