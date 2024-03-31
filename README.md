@@ -37,24 +37,46 @@ This project involves team collaboration to deploy a web application onto a clou
  - Each service is encapsulated within its own container and is part of a microservice architecture that facilitates scalability and ease of maintenance. The observability of the system is managed through Prometheus, Grafana, and Loki, allowing for efficient monitoring and analysis.
 
 
-> [!IMPORTANT]
-> Please, pay attetion to each note or caution about this project.
+
 
 > [!CAUTION]
 > You should use this scripts in production environment, you must read each script and try to have a deep understanding about these scripts. The permissions and AWS policies, GitHub Credentials, and Docker Hub are temporals.  
 
 
-> [!CAUTION]
+> [!NOTE]
 > You should have Terraform in your PATH environment.
 
-> [!CAUTION]
+> [!NOTE]
 >	You should work always in /tmp.
+> You should have kubectl in your path
 
-> [!CAUTION]
+
+> [!NOTE]
 >	All the commands must be run as ubuntu user or any local user ( default user) .
 
-> [!CAUTION]
+> [!NOTE]
 > You should try to understand each folder in Project-8---Observability-Systems/ (https://github.com/maxiplux/Project-8---Observability-Systems).
-
 ## Instalation.
+- Setup your local docker-desktop with Kubernetes.
+- git clone https://github.com/maxiplux/Project-8---Observability-Systems.git
+# Istio Installation Guide
+
+## Prerequisites
+
+- A Kubernetes cluster with versions: 1.26, 1.27, 1.28, or 1.29.
+- `kubectl` installed and configured to access your cluster.
+
+## Download Istio
+
+Download the latest release of Istio with the following command:
+- curl -L https://istio.io/downloadIstio | sh -
+- cd istio-1.21.0
+- export PATH=$PWD/bin:$PATH
+- istioctl install --set profile=demo -y
+- kubectl label namespace weclouddata istio-injection=enabled
+- 
+
+
+
+
 
