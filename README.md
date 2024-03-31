@@ -32,3 +32,28 @@ This project involves team collaboration to deploy a web application onto a clou
   - **Prometheus**: Monitoring system with a time-series database, accessible on port 8082.
   - **Grafana**: Analytics and monitoring platform visualizing data, accessible on port 3000.
   - **Loki**: Log aggregation system, accessible on port 3100.
+
+#### Summary
+ - Each service is encapsulated within its own container and is part of a microservice architecture that facilitates scalability and ease of maintenance. The observability of the system is managed through Prometheus, Grafana, and Loki, allowing for efficient monitoring and analysis.
+
+## Instalation.
+
+
+> [!CAUTION]
+> You should use this scripts in production environment, you must read each script and try to have a deep understanding about these scripts. The permissions and AWS policies, GitHub Credentials, and Docker Hub are temporals.  
+
+
+> [!NOTE]
+> You should have Terraform in your PATH environment.
+
+> [!NOTE]
+>	You should work always in /tmp.
+
+> [!NOTE]
+>	All the commands must be run as ubuntu user or any local user ( default user) .
+
+> [!NOTE]
+> You should try to understand each folder in Project-8---Observability-Systems/ (https://github.com/maxiplux/Project-8---Observability-Systems).
+
+
+
