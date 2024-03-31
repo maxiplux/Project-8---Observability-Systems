@@ -70,22 +70,33 @@ This project involves team collaboration to deploy a web application onto a clou
 ### Download Istio
 
 Download the latest release of Istio with the following command:
+- cd /tmp
 - curl -L https://istio.io/downloadIstio | sh -
 - cd istio-1.21.0
 - export PATH=$PWD/bin:$PATH
 - istioctl install --set profile=demo -y
-- kubectl label namespace weclouddata istio-injection=enabled
+![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/f6ce85eb-c7d3-4fae-bf05-06e05ff45568)
+
 
 ### Install project
 - cd /tmp
 - git clone https://github.com/maxiplux/Project-8---Observability-Systems.git
-- cd Project-8---Observability-Systems.git
+- cd Project-8---Observability-Systems
 - chmod +x *.sh
-- kubectl apply -f namespace.yml
+![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/c9873bbe-81b8-4b5f-9f63-b939397b0c4c)
+
+- kubectl apply -f namespace.yml 
 - kubectl label namespace weclouddata istio-injection=enabled
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/8d43d8f8-2066-4b59-8046-a04eecff236e)
+ 
 - sh deployer.sh
-- pip install requests
-   
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/2bab3930-d7a9-46d1-8076-b5fc465f2c90)
+- kubectl get svc -n weclouddata | grep math-add-subtract
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/84fddace-9d1d-4bf3-b2f5-b32b5f1c4b9d)
+- kubectl get svc -n weclouddata | grep math-division-multiplication
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/8b45e50e-e011-497e-8033-8bdb8236aae7)
+
+- pip install requests   
 
 
 
