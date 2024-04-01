@@ -120,6 +120,11 @@ Download the latest release of Istio with the following command:
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/2782346b-4bc3-40cd-a361-a2754c7f8148)
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/3ad2196a-5468-4f61-8ecb-a1816d1e32a4)
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/fef53247-d532-4f10-9163-f1a0d6a080aa)
+### Unistall components
+- kubectl delete namespace istio-system
+- kubectl delete namespace weclouddata
+- istioctl uninstall -y --purge
+
 
 
 
