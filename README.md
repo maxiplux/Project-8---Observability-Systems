@@ -109,10 +109,19 @@ Download the latest release of Istio with the following command:
 - istioctl dashboard kiali
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/14f701d8-2f20-4d5b-baf0-16d0f96773e3)
 - In this context we are focus only in the services math-division-multiplication and math-add-subtract. 
-### Prometeus/Loki ( Now we are see in action all the trafic thanks to Graphana)
+### Graphana/Loki ( Now we are see in action all the trafic thanks to Graphana)
 - kubectl port-forward svc/grafana 3000:3000 -n istio-system
 - Go to Graphana -> Datasources -> Loki -> Label Filters = math-add-subtract or math-division-multiplication.
 - ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/438c94a4-2d72-428e-ae88-c5f90dddbf1d)
+### Graphana/Prometheus
+- Import Spring Dashboard. 
+- Graphana -> Home -> Dashboards-> Import Dashboard into Folder Istio using Datasource Prometheus
+- Upload the file in the folder /graphana-dashboard/spring-boot-dashboard.json
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/2782346b-4bc3-40cd-a361-a2754c7f8148)
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/3ad2196a-5468-4f61-8ecb-a1816d1e32a4)
+- ![image](https://github.com/maxiplux/Project-8---Observability-Systems/assets/950541/fef53247-d532-4f10-9163-f1a0d6a080aa)
+
+
 
 
 
